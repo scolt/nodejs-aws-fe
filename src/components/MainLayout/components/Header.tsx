@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -7,8 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import Cart from "components/MainLayout/components/Cart";
-import {Link} from 'react-router-dom';
+import Cart from 'components/MainLayout/components/Cart';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,6 +20,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
+      position: 'relative',
+    },
+    subtitle: {
+      position: 'absolute',
+      margin: 0,
+      bottom: '-4px',
+      left: '13px',
+      fontSize: '12px',
     },
     homeLink: {
       color: 'white',
@@ -46,7 +54,8 @@ export default function Header() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          <Link className={classes.homeLink} to="/">My Store!</Link>
+          <Link className={classes.homeLink} to="/">Potatoes</Link>
+          <p className={classes.subtitle}>for everyone</p>
         </Typography>
 
         {auth && (

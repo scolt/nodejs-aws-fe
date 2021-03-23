@@ -1,9 +1,9 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
-import Container from "@material-ui/core/Container";
-import Header from "components/MainLayout/components/Header";
+import Container from '@material-ui/core/Container';
+import Header from 'components/MainLayout/components/Header';
 
 function Copyright() {
   return (
@@ -35,7 +35,7 @@ const MainLayout: React.FC = ({children}) => {
     <>
       <Header/>
       <main>
-        <Container className={classes.container} maxWidth="md">
+        <Container className={classes.container} maxWidth={false}>
           {children!}
         </Container>
       </main>
