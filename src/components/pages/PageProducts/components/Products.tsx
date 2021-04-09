@@ -9,11 +9,13 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Product} from "models/Product";
 import {formatAsPrice} from "utils/utils";
 import AddProductToCart from "components/AddProductToCart/AddProductToCart";
-// import axios from 'axios';
-// import API_PATHS from "constants/apiPaths";
-import productList from "./productList.json";
+import axios from 'axios';
+import API_PATHS from "constants/apiPaths";
 
 const useStyles = makeStyles((theme) => ({
+  label: {
+
+  },
   card: {
     height: '100%',
     display: 'flex',
@@ -36,9 +38,8 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // axios.get(`${API_PATHS.bff}/product/available/`)
-    //   .then(res => setProducts(res.data));
-    setProducts(productList);
+    axios.get(`${API_PATHS.product}/products`)
+      .then(res => setProducts(res.data));
   }, [])
 
   return (
@@ -48,16 +49,23 @@ export default function Products() {
           <Card className={classes.card}>
             <CardMedia
               className={classes.cardMedia}
-              image={`https://source.unsplash.com/random/?patatoes,patato,crisps&ts=${index}`}
+              image={product.image}
               title="Image title"
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="h2">
-                {product.title}
+                {product.name}
               </Typography>
               <Typography>
-                {formatAsPrice(product.price)}
+                {product.description}
               </Typography>
+              { product.attributes.price && <Typography>
+                {formatAsPrice(product.attributes.price)}
+              </Typography> }
+              <div className={classes.label}>
+                {product.attributes.type}
+              </div>
+
             </CardContent>
             <CardActions>
               <AddProductToCart product={product}/>
