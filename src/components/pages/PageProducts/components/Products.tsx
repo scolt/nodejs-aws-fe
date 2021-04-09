@@ -13,9 +13,6 @@ import axios from 'axios';
 import API_PATHS from "constants/apiPaths";
 
 const useStyles = makeStyles((theme) => ({
-  label: {
-
-  },
   card: {
     height: '100%',
     display: 'flex',
@@ -54,17 +51,14 @@ export default function Products() {
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="h2">
-                {product.name}
+                {product.title}
               </Typography>
               <Typography>
                 {product.description}
               </Typography>
-              { product.attributes.price && <Typography>
-                {formatAsPrice(product.attributes.price)}
+              { product.price && <Typography>
+                {formatAsPrice(product.price)}
               </Typography> }
-              <div className={classes.label}>
-                {product.attributes.type}
-              </div>
 
             </CardContent>
             <CardActions>
