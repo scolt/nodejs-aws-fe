@@ -1,16 +1,6 @@
 # Task Details
-## Task 2
-1. S3 bucket has been created and configured properly:
-   
-   [Potatoes S3 Link](http://shop-potatoes.s3-website-eu-west-1.amazonaws.com/)
-
-2. CloudFront distribution has been created and configured properly:
-   
-   [Potatoes CloudFront Link](https://d3f72tv2wri3cv.cloudfront.net)
-
-3. Serverless-finch and serverless-single-page-app plugins are added and configured.
-
-
+## Task 3
+1. Integrated with API
 
 # Project details
 
