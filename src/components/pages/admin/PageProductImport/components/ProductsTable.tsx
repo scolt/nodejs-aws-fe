@@ -16,7 +16,8 @@ export default function ProductsTable() {
   const [products, setProducts] = useState<any>([]);
 
   useEffect(() => {
-    axios.get(`${API_PATHS.bff}/product`)
+    // TODO: Rollback to BFF and PRODUCT
+    axios.get(`${API_PATHS.product}/products?stock=true`)
       .then(res => setProducts(res.data));
   }, []);
 

@@ -1,3 +1,9 @@
+# Task Details
+## Task 3
+1. Integrated with API
+
+# Project details
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
