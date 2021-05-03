@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:  
 You can use NPM instead of YARN (Up to you)  
-
+git p
 ### `yarn start` OR `npm run start`
 
 Runs the app in the development mode.<br />
