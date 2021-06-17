@@ -34,6 +34,14 @@ axios.interceptors.response.use(
       alert(error.response.data?.data);
     }
 
+    if (error?.response?.status === 401) {
+      alert('You are not authorized. Please use valid username and password.');
+    }
+
+    if (error?.response?.status === 403) {
+      alert('You do not have permission for this operation.');
+    }
+
     return Promise.reject(error?.response ?? error);
   }
 );
